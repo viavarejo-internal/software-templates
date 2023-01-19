@@ -71,7 +71,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.component_id }}
-        repoUrl: viavarejo-internal/${{ parameters.repoName }}
+        repoUrl: github.com/viavarejo-internal/${{ parameters.repoName }}
 
     - id: register
       name: Register
