@@ -42,7 +42,7 @@ spec:
               - Group
     - title: Choose a location
       required:
-        - repoUrl
+        - repoName
       properties:
         repoName:
           title: Repository Name
