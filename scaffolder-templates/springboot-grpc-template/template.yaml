@@ -44,13 +44,9 @@ spec:
       required:
         - repoUrl
       properties:
-        repoUrl:
-          title: Repository Location
+        repoName:
+          title: Repository Name
           type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
 
   steps:
     - id: template
@@ -66,23 +62,23 @@ spec:
           artifact_id: ${{ parameters.component_id }}
           java_package_name: ${{ parameters.java_package_name }}
           owner: ${{ parameters.owner }}
-          destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          destination: ${{ parameters.repoName }}
           http_port: 8080
 
     - id: publish
       name: Publish
       action: publish:github
       input:
-        allowedHosts: ["github.com"]
+        allowedHosts: ['github.com']
         description: This is ${{ parameters.component_id }}
-        repoUrl: ${{ parameters.repoUrl }}
+        repoUrl: viavarejo-internal/${{ parameters.repoName }}
 
     - id: register
       name: Register
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
-        catalogInfoPath: "/catalog-info.yaml"
+        catalogInfoPath: '/catalog-info.yaml'
 
   output:
     links:
