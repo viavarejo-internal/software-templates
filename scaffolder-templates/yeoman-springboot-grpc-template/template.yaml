@@ -71,7 +71,8 @@ spec:
       name: Yeoman
       action: run:yeoman
       input:
-        namespace: '@internal/viaops'
+        namespace: viavarejo-interal:developer-centric
+        packageName: '@internal/viaops@1.0.0'
         options:
           projectName: ${{ parameters.repoName }}
           coolFeatureName: ${{ parameters.coolFeatureName }}
