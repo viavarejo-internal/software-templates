@@ -72,7 +72,7 @@ spec:
       action: run:yeoman
       input:
         namespace: org:codeowners
-        #packageName: '@internal/viaops'
+        packageName: '@internal/viaops'
         options:
           projectName: ${{ parameters.repoName }}
           coolFeatureName: ${{ parameters.coolFeatureName }}
