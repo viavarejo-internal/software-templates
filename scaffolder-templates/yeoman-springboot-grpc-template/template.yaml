@@ -71,8 +71,8 @@ spec:
       name: Yeoman
       action: run:yeoman
       input:
-        namespace: '@internal/viaops@1.0.0'
-        packageName: '@internal/viaops@1.0.0'
+        namespace: '@internal/viaops'
+        packageName: '@internal/viaops'
         options:
           projectName: ${{ parameters.repoName }}
           coolFeatureName: ${{ parameters.coolFeatureName }}
