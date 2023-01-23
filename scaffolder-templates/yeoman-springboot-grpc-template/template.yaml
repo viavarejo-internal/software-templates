@@ -46,6 +46,9 @@ spec:
         repoName:
           title: Repository Name
           type: string
+        coolFeatureName:
+          title: Enable Cool Feature?
+          type: boolean
 
   steps:
     - id: template
@@ -71,7 +74,7 @@ spec:
         namespace: node:app
         packageName: '@internal/viaops'
         options:
-          projectName: ${{ parameters.projectName }}
+          projectName: ${{ parameters.repoName }}
           coolFeatureName: ${{ parameters.coolFeatureName }}
 
     - id: publish
