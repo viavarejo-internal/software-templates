@@ -73,6 +73,7 @@ spec:
       input:
         namespace: org:codeowners
         packageName: '@internal/viaops'
+        generatorName: '@internal/viaops'
         options:
           projectName: ${{ parameters.repoName }}
           coolFeatureName: ${{ parameters.coolFeatureName }}
