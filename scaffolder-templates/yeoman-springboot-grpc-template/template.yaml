@@ -72,9 +72,10 @@ spec:
       action: run:yeoman
       input:
         namespace: viaops:app
-        args:
-          - --cli
         options:
+          viaopsOptions:
+            foo: bar
+            lorem: ipsum
           projectName: ${{ parameters.repoName }}
           coolFeatureName: ${{ parameters.coolFeatureName }}
 
