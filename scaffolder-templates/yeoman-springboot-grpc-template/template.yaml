@@ -88,6 +88,14 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.component_id }}
         repoUrl: github.com?repo=${{ parameters.repoName }}&owner=viavarejo-internal
+        
+    - id: publish-viaops
+      name: Publish ViaOps
+      action: publish:viaops
+      input:
+        tribeId: "8912"
+        squadId: "188"
+        repositoryName: ${{ parameters.repoName }}
 
     - id: register
       name: Register
