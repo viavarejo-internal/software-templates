@@ -20,7 +20,7 @@ spec:
           title: Name
           type: string
           description: My custom name for the component
-          ui:field: ValidateKebabCaseExtension
+          ui:field: ValidateKebabCase
         description:
           title: Description
           type: string
