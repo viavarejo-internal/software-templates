@@ -17,10 +17,10 @@ spec:
         - owner
       properties:
         component_id:
-          title: Name
+          title: Squad
           type: string
-          description: My custom name for the component
-          ui:field: ValidateKebabCase
+          description: Selecione a sua squad
+          ui:field: ViaOpsSelectSquad
         description:
           title: Description
           type: string
