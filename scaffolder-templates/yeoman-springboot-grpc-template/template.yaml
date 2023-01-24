@@ -72,6 +72,8 @@ spec:
       action: run:yeoman
       input:
         namespace: viaops:app
+        args: 
+          - --force
         options:
           viaopsOptions:
             foo: bar
