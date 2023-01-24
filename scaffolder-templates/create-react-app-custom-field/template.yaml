@@ -18,7 +18,7 @@ spec:
       properties:
         component_id:
           title: Squad
-          type: string
+          type: number
           description: Selecione a sua squad
           ui:field: ViaOpsSelectSquad
         description:
