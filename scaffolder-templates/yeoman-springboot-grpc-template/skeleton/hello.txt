@@ -1,0 +1,7 @@
+Hello World! <%= projectName %>
+
+<% if(coolFeatureName){ %>
+My Cool Feature Enabled!
+<% } else{ %>
+Sorry, cool Feature Disabled =(
+<% } %>
