@@ -18,7 +18,9 @@ spec:
       properties:
         viaops:
           title: Squad
-          type: object
+          type: array
+          items:
+            type: string
           description: Selecione a sua squad
           ui:field: ViaOpsSelectSquad
         description:
