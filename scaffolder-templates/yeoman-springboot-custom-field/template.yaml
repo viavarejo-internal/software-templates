@@ -34,11 +34,10 @@ spec:
           description: Help others understand what this website is for.
         owner:
           title: Owner
-          type: string
+          type: number
           description: Owner of the component
-          ui:options:
-            allowedKinds:
-              - Group
+          ui:field: ViaOpsSelectSquad
+
     - title: Choose a location
       required:
         - repoName
@@ -93,8 +92,8 @@ spec:
       name: Publish ViaOps
       action: publish:viaops
       input:
-        tribeId: "8912"
-        squadId: "188"
+        tribeId: '8912'
+        squadId: '188'
         repositoryName: ${{ parameters.repoName }}
 
     - id: register
