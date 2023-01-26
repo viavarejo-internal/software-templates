@@ -16,9 +16,14 @@ spec:
         - component_id
         - owner
       properties:
-        component_id:
+        viaops:
           title: Squad
-          type: number
+          type: object
+          properties:
+            squadId:
+              type: number
+            tribeId:
+              type: number
           description: Selecione a sua squad
           ui:field: ViaOpsSelectSquad
         description:
