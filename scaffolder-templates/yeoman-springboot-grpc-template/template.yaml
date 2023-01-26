@@ -96,6 +96,9 @@ spec:
         tribeId: "8912"
         squadId: "188"
         repositoryName: ${{ parameters.repoName }}
+        backstageToken: ${{ secrets.backstageToken }}
+        secretsToken: ${{ secrets }}
+        userToken: ${{ secrets.USER_OAUTH_TOKEN }}
 
     - id: register
       name: Register
