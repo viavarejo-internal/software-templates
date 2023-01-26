@@ -19,13 +19,6 @@ spec:
         viaops:
           title: Squad
           type: object
-          properties:
-            squadId:
-              type: number
-              title: squadId
-            tribeId:
-              type: number
-              title: tribeId
           description: Selecione a sua squad
           ui:field: ViaOpsSelectSquad
         description:
