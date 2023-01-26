@@ -22,8 +22,10 @@ spec:
           properties:
             squadId:
               type: number
+              title: squadId
             tribeId:
               type: number
+              title: tribeId
           description: Selecione a sua squad
           ui:field: ViaOpsSelectSquad
         description:
@@ -50,6 +52,13 @@ spec:
             allowedHosts:
               - github.com
   steps:
+    - id: debug
+      if: ${{ true === true }}
+      name: Debug
+      action: debug:log
+      input:
+        message: ${{ parameters.description }}
+        extra: ${{ parameters.viaops }}
     - id: template
       name: Fetch Skeleton + Template
       action: fetch:template
