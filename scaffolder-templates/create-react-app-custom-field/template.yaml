@@ -30,4 +30,4 @@ spec:
       action: debug:log
       input:
         message: ${{ parameters.description }}
-        extra: ${{ parameters.viaops }}
+        extra: ${{ JSON.parse(parameters.viaops) }}
