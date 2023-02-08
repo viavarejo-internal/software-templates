@@ -34,7 +34,7 @@ spec:
           description: Help others understand what this website is for.
         owner:
           title: Owner
-          type: number
+          type: string
           description: Owner of the component
           ui:field: ViaOpsSelectSquad
 
