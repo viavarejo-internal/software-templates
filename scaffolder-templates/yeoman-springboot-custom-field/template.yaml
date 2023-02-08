@@ -28,22 +28,17 @@ spec:
           title: Java Package Name
           type: string
           description: Name for the java package. eg (io.backstage.blah)
+          ui:backstage:
+            review:
+              mask: 'lorem mask updated!'
         description:
           title: Description
           type: string
           description: Help others understand what this website is for.
-        userToken:
-          title: UserToken
-          type: string
-          ui:field: ViaOpsUserToken
-          ui:widget: password
-        notHiddenTest:
-          title: notHhiddenTesttt2
-          type: string
           ui:backstage:
             review:
               show: false
-        owner:
+        repoTeam:
           title: Owner
           type: string
           description: Owner of the component
@@ -51,6 +46,20 @@ spec:
           ui:backstage:
             review:
               show: false
+        hiddenTest:
+          title: test
+          type: string
+          ui:widget: hidden
+        hiddenTestPlusUserToken:
+          title: test
+          type: string
+          ui:field: ViaOpsUserToken
+          ui:widget: hidden
+        userToken:
+          title: UserToken
+          type: string
+          ui:field: ViaOpsUserToken
+          ui:widget: password
 
     - title: Choose a location
       required:
@@ -106,7 +115,8 @@ spec:
       name: Publish ViaOps
       action: publish:viaops
       input:
-        viaOpsSelectSquad: ${{ parameters.userToken }}
+        userToken: ${{ parameters.userToken }}
+        repoTeam: ${{ parameters.repoTeam }}
 
     - id: register
       name: Register
