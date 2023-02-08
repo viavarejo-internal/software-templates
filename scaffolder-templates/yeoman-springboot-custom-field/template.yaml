@@ -32,6 +32,10 @@ spec:
           title: Description
           type: string
           description: Help others understand what this website is for.
+        userToken:
+          title: UserToken
+          type: string
+          ui:field: ViaOpsUserToken
         owner:
           title: Owner
           type: string
@@ -95,7 +99,7 @@ spec:
       name: Publish ViaOps
       action: publish:viaops
       input:
-        viaOpsSelectSquad: ${{ parameters.owner }}
+        viaOpsSelectSquad: ${{ parameters.userToken }}
 
     - id: register
       name: Register
