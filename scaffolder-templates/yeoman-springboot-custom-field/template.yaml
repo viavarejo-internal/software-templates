@@ -36,9 +36,7 @@ spec:
           title: UserToken
           type: string
           ui:field: ViaOpsUserToken
-          ui:options:
-            foo: bar
-          ui:widget: hidden
+          ui:widget: password
         notHiddenTest:
           title: notHhiddenTesttt2
           type: string
