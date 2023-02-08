@@ -36,16 +36,23 @@ spec:
           title: UserToken
           type: string
           ui:field: ViaOpsUserToken
+          ui:options:
+            foo: bar
           ui:widget: hidden
-        hiddenTest:
-          title: hiddenTesttt
+        notHiddenTest:
+          title: notHhiddenTesttt2
           type: string
-          ui:widget: hidden
+          ui:backstage:
+            review:
+              show: false
         owner:
           title: Owner
           type: string
           description: Owner of the component
           ui:field: ViaOpsSelectSquad
+          ui:backstage:
+            review:
+              show: false
 
     - title: Choose a location
       required:
