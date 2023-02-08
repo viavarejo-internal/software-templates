@@ -37,6 +37,9 @@ spec:
           type: string
           description: Owner of the component
           ui:field: ViaOpsSelectSquad
+          ui:backstage:
+            review:
+              show: false 
 
     - title: Choose a location
       required:
