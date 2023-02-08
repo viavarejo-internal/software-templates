@@ -16,7 +16,7 @@ spec:
     - title: Provide some simple information
       required:
         - component_id
-        - owner
+        - repoTeam
         - java_package_name
       properties:
         component_id:
