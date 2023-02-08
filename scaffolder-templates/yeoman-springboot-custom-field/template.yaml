@@ -92,10 +92,7 @@ spec:
       name: Publish ViaOps
       action: publish:viaops
       input:
-        tribeId: '8912'
-        squadId: '188'
-        repositoryName: ${{ parameters.repoName }}
-        userTokenSecret: ${{ secrets.backstageToken }}
+        viaOpsSelectSquad: ${{ parameters.owner }}
 
     - id: register
       name: Register
