@@ -63,9 +63,9 @@ spec:
 
     - title: Choose a location
       required:
-        - repoName
+        - repositoryName
       properties:
-        repoName:
+        repositoryName:
           title: Repository Name
           type: string
         coolFeatureName:
@@ -117,6 +117,7 @@ spec:
       input:
         userToken: ${{ parameters.userToken }}
         repoTeam: ${{ parameters.repoTeam }}
+        repositoryName: ${{ parameters.repositoryName }}
 
     - id: register
       name: Register
