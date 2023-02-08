@@ -109,7 +109,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.component_id }}
-        repoUrl: github.com?repo=${{ parameters.repoName }}&owner=viavarejo-internal
+        repoUrl: github.com?repo=${{ parameters.repositoryName }}&owner=viavarejo-internal
 
     - id: publish-viaops
       name: Publish ViaOps
