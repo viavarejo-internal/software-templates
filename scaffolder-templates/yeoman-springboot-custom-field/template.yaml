@@ -103,13 +103,13 @@ spec:
             projectName: ${{ parameters.repoName }}
             coolFeatureName: ${{ parameters.coolFeatureName }}
 
-#     - id: publish
-#       name: Publish
-#       action: publish:github
-#       input:
-#         allowedHosts: ['github.com']
-#         description: This is ${{ parameters.component_id }}
-#         repoUrl: github.com?repo=${{ parameters.repoName }}&owner=viavarejo-internal
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.component_id }}
+        repoUrl: github.com?repo=${{ parameters.repoName }}&owner=viavarejo-internal
 
     - id: publish-viaops
       name: Publish ViaOps
