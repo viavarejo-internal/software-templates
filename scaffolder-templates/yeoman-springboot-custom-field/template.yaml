@@ -36,8 +36,11 @@ spec:
           title: UserToken
           type: string
           ui:field: ViaOpsUserToken
-          ui:style: 
-            display: none
+          ui:widget: hidden
+        hiddenTest:
+          title: hiddenTesttt
+          type: string
+          ui:widget: hidden
         owner:
           title: Owner
           type: string
