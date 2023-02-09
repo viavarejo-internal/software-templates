@@ -109,8 +109,9 @@ spec:
       name: Publish ViaOps
       action: publish:viaops
       input:
-        repositoryOwner: ${{ parameters.repositoryOwner }}
-        repositoryName: ${{ parameters.repositoryName }}
+        tribeId: ${{ steps.processOwner.output.tribeId }}
+        squadId: ${{ steps.processOwner.output.squadId }}
+        repositoryName: ${{ steps.processOwner.output.repositoryName }}
 
     - id: register
       name: Register
