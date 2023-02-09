@@ -63,6 +63,12 @@ spec:
           type: boolean
 
   steps:
+    - id: processOwner
+      name: Proccess Owner
+      action: process:owner
+      input:
+        repositoryOwner: ${{ parameters.repositoryOwner }}
+
     - id: template
       name: Fetch Skeleton + Template
       action: fetch:template
@@ -75,21 +81,21 @@ spec:
           description: ${{ parameters.description }}
           artifact_id: ${{ parameters.component_id }}
           java_package_name: ${{ parameters.java_package_name }}
-          owner: ${{ parameters.owner }}
+          owner: ${{ steps.processOwner.output.squadName }}
           destination: ${{ parameters.repositoryName }}
           http_port: 8080
 
-    - id: yeoman
-      name: Yeoman
-      action: run:yeoman
-      input:
-        namespace: viaops:app
-        args:
-          - --force
-        options:
-          viaopsOptions:
-            projectName: ${{ parameters.repositoryName }}
-            coolFeatureName: ${{ parameters.coolFeatureName }}
+#     - id: yeoman
+#       name: Yeoman
+#       action: run:yeoman
+#       input:
+#         namespace: viaops:app
+#         args:
+#           - --force
+#         options:
+#           viaopsOptions:
+#             projectName: ${{ parameters.repositoryName }}
+#             coolFeatureName: ${{ parameters.coolFeatureName }}
 
     - id: publish
       name: Publish
@@ -99,7 +105,7 @@ spec:
         description: This is ${{ parameters.component_id }}
         repoUrl: github.com?repo=${{ parameters.repositoryName }}&owner=viavarejo-internal
 
-    - id: publish-viaops
+    - id: publishViaops
       name: Publish ViaOps
       action: publish:viaops
       input:
