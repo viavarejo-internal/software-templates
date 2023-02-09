@@ -111,7 +111,7 @@ spec:
       input:
         tribeId: ${{ steps.processOwner.output.tribeId }}
         squadId: ${{ steps.processOwner.output.squadId }}
-        repositoryName: ${{ steps.processOwner.output.repositoryName }}
+        repositoryName: ${{ parameters.repositoryName }}
 
     - id: register
       name: Register
