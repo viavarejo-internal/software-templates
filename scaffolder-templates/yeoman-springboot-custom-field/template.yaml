@@ -16,7 +16,7 @@ spec:
     - title: Provide some simple information
       required:
         - component_id
-        - repoTeam
+        - repositoryOwner
         - java_package_name
       properties:
         component_id:
@@ -38,7 +38,7 @@ spec:
           ui:backstage:
             review:
               show: false
-        repoTeam:
+        repositoryOwner:
           title: Owner
           type: string
           description: Owner of the component
@@ -50,16 +50,6 @@ spec:
           title: test
           type: string
           ui:widget: hidden
-        hiddenTestPlusUserToken:
-          title: test
-          type: string
-          ui:field: ViaOpsUserToken
-          ui:widget: hidden
-        userToken:
-          title: UserToken
-          type: string
-          ui:field: ViaOpsUserToken
-          ui:widget: password
 
     - title: Choose a location
       required:
@@ -86,7 +76,7 @@ spec:
           artifact_id: ${{ parameters.component_id }}
           java_package_name: ${{ parameters.java_package_name }}
           owner: ${{ parameters.owner }}
-          destination: ${{ parameters.repoName }}
+          destination: ${{ parameters.repositoryName }}
           http_port: 8080
 
     - id: yeoman
@@ -98,9 +88,7 @@ spec:
           - --force
         options:
           viaopsOptions:
-            foo: bar
-            lorem: ipsum
-            projectName: ${{ parameters.repoName }}
+            projectName: ${{ parameters.repositoryName }}
             coolFeatureName: ${{ parameters.coolFeatureName }}
 
     - id: publish
@@ -115,8 +103,7 @@ spec:
       name: Publish ViaOps
       action: publish:viaops
       input:
-        userToken: ${{ parameters.userToken }}
-        repoTeam: ${{ parameters.repoTeam }}
+        repositoryOwner: ${{ parameters.repositoryOwner }}
         repositoryName: ${{ parameters.repositoryName }}
 
     - id: register
