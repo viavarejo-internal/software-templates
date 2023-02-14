@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: test
+  description: ViaOps Backstage developer portal.
+  annotations:
+    github.com/project-slug: viavarejo-internal/software-templates
+    qameta.io/allure-project: https://cnjaqueline.github.io/bootcamp-viavarejo-cypress/15/
+  links:
+    - url: https://viavarejo.sharepoint.com/sites/DevCentric
+      title: Dev Centric Share Point
+      icon: dashboard
+spec:
+  type: website
+  owner: developer-centric
+  lifecycle: production
