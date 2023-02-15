@@ -1,0 +1,64 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: empty-repository
+  title: Repositório Vazio
+  description: Cria um Repositório Vazio
+  tags:
+    - empty
+spec:
+  owner: developer-centric
+  type: component
+
+  parameters:
+    - title: Basic Information
+      required:
+        - repositoryOwner
+        - repositoryName
+      properties:
+        repositoryOwner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: ViaOpsSelectSquad
+        repositoryName:
+          title: Repository Name
+          type: string
+
+  steps:
+    - id: processOwner
+      name: Proccess Owner
+      action: process:owner
+      input:
+        repositoryOwner: ${{ parameters.repositoryOwner }}
+
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.repositoryName }}
+        repoUrl: github.com?repo=${{ parameters.repositoryName }}&owner=viavarejo-internal
+
+    - id: publishViaops
+      name: Publish ViaOps
+      action: publish:viaops
+      input:
+        tribeId: ${{ steps.processOwner.output.tribeId }}
+        squadId: ${{ steps.processOwner.output.squadId }}
+        repositoryName: ${{ parameters.repositoryName }}
+
+    # - id: register
+    #   name: Register
+    #   action: catalog:register
+    #   input:
+    #     repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+    #     catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      # - title: Open in catalog
+      #   icon: catalog
+      #   entityRef: ${{ steps.register.output.entityRef }}
