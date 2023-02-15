@@ -67,20 +67,6 @@ spec:
           destination: ${{ parameters.repoName }}
           http_port: 8080
 
-    - id: yeoman
-      name: Yeoman
-      action: run:yeoman
-      input:
-        namespace: viaops:app
-        args:
-          - --force
-        options:
-          viaopsOptions:
-            foo: bar
-            lorem: ipsum
-            projectName: ${{ parameters.repoName }}
-            coolFeatureName: ${{ parameters.coolFeatureName }}
-
     - id: publish-viaops
       name: Publish ViaOps
       action: publish:viaops
