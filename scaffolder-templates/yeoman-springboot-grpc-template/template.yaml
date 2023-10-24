@@ -10,7 +10,7 @@ metadata:
     - grpc
 spec:
   owner: service@example.com
-  type: service
+  type: library
 
   parameters:
     - title: Provide some simple information
